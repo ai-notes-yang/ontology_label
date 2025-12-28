@@ -4,24 +4,24 @@ import uuid
 import csv
 import io
 from datetime import datetime
-from flask import Flask, request, jsonify, send_from_directory, Response
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from config import Config, IS_VERCEL
 from models import db, UploadedFile, Intent
 from logger import logger
 
-# 获取backend目录的绝对路径
-BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_FOLDER = os.path.join(BACKEND_DIR, '..', 'frontend', 'build')
-
-# 创建Flask应用
-if os.path.exists(STATIC_FOLDER):
-    app = Flask(__name__, static_folder=STATIC_FOLDER, static_url_path='')
-else:
-    app = Flask(__name__)
-
+# 创建Flask应用（纯API模式，前端单独部署）
+app = Flask(__name__)
 app.config.from_object(Config)
-CORS(app)
+
+# 配置CORS - 允许所有来源（生产环境可以限制为前端域名）
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 
 db.init_app(app)
 
@@ -70,11 +70,7 @@ if IS_VERCEL:
 
 @app.route('/')
 def serve():
-    """根路由 - 返回API状态或静态页面"""
-    if app.static_folder:
-        index_path = os.path.join(app.static_folder, 'index.html')
-        if os.path.exists(index_path):
-            return send_from_directory(app.static_folder, 'index.html')
+    """根路由 - 返回API状态"""
     return jsonify({
         'message': 'Ontology Review API is running',
         'status': 'ok',
