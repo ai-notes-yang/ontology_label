@@ -279,3 +279,7 @@
 2025-12-28 16:42:23 - ontology_review - INFO - 启动服务器... 端口: 5001
 2025-12-28 16:42:32 - ontology_review - INFO - 数据库表创建完成
 2025-12-28 16:42:32 - ontology_review - INFO - 启动服务器... 端口: 5001
+2025-12-28 16:43:18 - ontology_review - INFO - 数据库表创建完成
+2025-12-28 16:43:18 - ontology_review - INFO - 启动服务器... 端口: 5001
+2025-12-28 18:06:59 - ontology_review - INFO - 数据库表已存在，跳过创建
+2025-12-28 18:06:59 - ontology_review - INFO - 启动服务器... 端口: 5001

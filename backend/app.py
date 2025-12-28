@@ -60,8 +60,20 @@ STEP_TYPES = [
 # 初始化数据库（在应用上下文中）
 def init_db():
     with app.app_context():
-        db.create_all()
-        logger.info("数据库表创建完成")
+        try:
+            # 使用 inspect 检查表是否已存在
+            from sqlalchemy import inspect
+            inspector = inspect(db.engine)
+            existing_tables = inspector.get_table_names()
+            
+            if 'uploaded_files' not in existing_tables or 'intents' not in existing_tables:
+                db.create_all()
+                logger.info("数据库表创建完成")
+            else:
+                logger.info("数据库表已存在，跳过创建")
+        except Exception as e:
+            logger.warning(f"数据库初始化检查: {e}")
+            # 表可能已存在，忽略错误
 
 # Vercel环境下需要在模块加载时初始化
 if IS_VERCEL:
