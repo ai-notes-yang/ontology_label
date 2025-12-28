@@ -1,0 +1,561 @@
+{
+  "metadata": {
+    "source_file": "原子意图-流程访谈-融合-人工检查.json",
+    "created_at": "2024-12-23",
+    "total_items": 60,
+    "judgement_options": [
+      "通过",
+      "需修改",
+      "删除",
+      "待定"
+    ]
+  },
+  "Stage_1_Requirement_Insight": [
+    {
+      "id": "INT-S1-001",
+      "category": "Fact",
+      "original_comment": "招聘需求主要来源于客户的 RMS 系统或飞书在线表格。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-002",
+      "category": "Fact",
+      "original_comment": "每个招聘需求都具备唯一的系统编号和对应的职级属性。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-003",
+      "category": "Action",
+      "original_comment": "当 RMS 系统出现新需求时，交付经理手动同步 JD 信息并创建内部管理记录。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-004",
+      "category": "Action",
+      "original_comment": "交付经理通过与客户沟通澄清模糊的 JD，并更新需求中的技术栈要求。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-005",
+      "category": "Logic",
+      "original_comment": "如果需求的薪资水平明显低于市场行情，则将其招聘优先级设为低。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-006",
+      "category": "Logic",
+      "original_comment": "如果识别到需求已有内定人选，则降低该岗位的内部资源投入优先级。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-007",
+      "category": "Logic",
+      "original_comment": "招聘专员根据合同单价和目标毛利反向推算可给到候选人的薪资上限。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-008",
+      "category": "Fact",
+      "original_comment": "招聘需求必须包含具体的结算模式、加班节奏及奖金规则信息。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-009",
+      "category": "Fact",
+      "original_comment": "只要相关编号下仍有 Headcount 预算，该需求在系统中就保持开启状态。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-010",
+      "category": "Action",
+      "original_comment": "针对低价难招岗位，交付团队通过挂靠高单价岗位编号来平衡招聘成本。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-011",
+      "category": "Fact",
+      "original_comment": "字节跳动提供包三餐福利，且在办公环境中强调不歧视外包员工。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-012",
+      "category": "Logic",
+      "original_comment": "如果工作地点不在北京等总部，三餐福利可能不包含在岗位待遇中。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-013",
+      "category": "Fact",
+      "original_comment": "字节跳动的后端技术体系主要以 Go 语言为主，Java 需求量相对较少。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-014",
+      "category": "Fact",
+      "original_comment": "目前字节跳动项目共有 17 家供应商在同一平台进行竞速招聘。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-015",
+      "category": "Fact",
+      "original_comment": "如果供应商的客户投诉量过高，客户会采取缩减其需求分配份额的惩罚措施。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_2_Sourcing_Screening": [
+    {
+      "id": "INT-S2-001",
+      "category": "Action",
+      "original_comment": "招聘专员发布简化版 JD 以降低投递门槛并提升简历流量基数。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-002",
+      "category": "Action",
+      "original_comment": "招聘专员收集候选人身份证号、手机和邮箱以建立系统档案。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-003",
+      "category": "Logic",
+      "original_comment": "如果身份证号在系统查重中已存在，则系统拦截该简历的上传动作。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-004",
+      "category": "Logic",
+      "original_comment": "如果候选人离职时间不足 6 个月（保护期内），则无法被重新推荐。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-005",
+      "category": "Action",
+      "original_comment": "招聘专员获取信息后通过第一时间上传来抢占候选人的系统归属权（占坑）。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-006",
+      "category": "Logic",
+      "original_comment": "如果候选人学历非统招公办本科，则系统自动过滤并标记初筛失败。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-007",
+      "category": "Logic",
+      "original_comment": "如果候选人有超过一年的职业空窗期，则该候选人被标记为高风险人选。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-008",
+      "category": "Action",
+      "original_comment": "内部技术面试官通过 10-20 分钟的电话访谈生成技术初筛评价。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-009",
+      "category": "Action",
+      "original_comment": "面试官通过深度追问项目细节来识别候选人是否使用 AI 或其他手段作弊。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-010",
+      "category": "Logic",
+      "original_comment": "候选人若在某一岗位下失败，则该候选人在三个月内被锁定，无法再次推荐同岗。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-011",
+      "category": "Logic",
+      "original_comment": "若客户在 5 个工作日内未处理推荐，系统会在截止日 22:00 自动释放人选锁定。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-012",
+      "category": "Action",
+      "original_comment": "招聘专员先进行信任铺垫再索要身份证号，以降低候选人的抵触心理并提高成功率。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-013",
+      "category": "Fact",
+      "original_comment": "IT 技术类岗位（如测试开发）存在极高的简历重复率（撞单）。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-014",
+      "category": "Action",
+      "original_comment": "招聘专员根据 JD 核心技能对简历进行排版优化，将匹配技能位置前移。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-015",
+      "category": "Fact",
+      "original_comment": "团队内部规定简历文件必须统一命名为\"中文名-岗位名\"格式。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-016",
+      "category": "Fact",
+      "original_comment": "飞书消息流采用倒序排列，最新发送的消息回复概率相对更高。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-017",
+      "category": "Action",
+      "original_comment": "招聘专员应集中在下午 16:00 后及晚间打招呼，以匹配在职候选人的活跃时段。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-018",
+      "category": "Logic",
+      "original_comment": "如果优质候选人已被友商锁定，交付经理需发起沟通请求其释放归属权。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_3_Evaluation_Selection": [
+    {
+      "id": "INT-S3-001",
+      "category": "Action",
+      "original_comment": "招聘专员为了竞速占坑，优先上传原始简历以锁定系统归属权。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-002",
+      "category": "Action",
+      "original_comment": "针对特定面试官喜好，在飞书在线表格同步更新详细的推荐评价。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-003",
+      "category": "Action",
+      "original_comment": "交付经理每日定时刷新系统看板，主动识别已通过初筛待约面试的人选。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-004",
+      "category": "Action",
+      "original_comment": "确认面试意向后，交付经理生成并挂载飞书面试会议及日历链接。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-005",
+      "category": "Action",
+      "original_comment": "招聘专员向候选人传达守时、着装要求及面试官特定的素质偏好。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-006",
+      "category": "Fact",
+      "original_comment": "字节的技术岗及测试岗面试强制要求候选人开启屏幕共享进行代码实操考核。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-007",
+      "category": "Action",
+      "original_comment": "面试结束后立即回访候选人对题目完成度的自我反馈，以预判最终结果。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-008",
+      "category": "Logic",
+      "original_comment": "若面试官迟到，交付经理点击 \"加急\" 触发机器人语音提醒面试官上线。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-009",
+      "category": "Logic",
+      "original_comment": "面试官倾向于在所有环节结束后再一次性在 RMS 系统补录操作历史。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-010",
+      "category": "Action",
+      "original_comment": "交付经理将专家的内面技术评价汇总录入内部 OA 系统及客户需求位。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-011",
+      "category": "Action",
+      "original_comment": "针对难招的技术岗位，由内部专家对候选人进行面试前的定向技术辅导。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-012",
+      "category": "Action",
+      "original_comment": "在简历中增加简介并高亮 JD 关键词，以帮助面试官快速识别匹配度。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_4_Negotiation_Onboarding": [
+    {
+      "id": "INT-S4-001",
+      "category": "Action",
+      "original_comment": "客户在候选人通过面试后的一天内给出能力定级和定级评价。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-002",
+      "category": "Logic",
+      "original_comment": "若期望薪资超限，交付经理利用能力与流水作为筹码申请调级特批。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-003",
+      "category": "Action",
+      "original_comment": "招聘专员根据定级和合同单价反向推算 Offer 包并进行薪资沟通。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-004",
+      "category": "Logic",
+      "original_comment": "如果单人毛利低于 2000 元或毛利率低于标准，需发起低毛利专项审批。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-005",
+      "category": "Action",
+      "original_comment": "在谈判僵持阶段，邀请高度认可该候选人的面试官协助进行吸引。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-006",
+      "category": "Action",
+      "original_comment": "收集流水、保密协议及体检报告，完成入职前的所有纸质及电子档案。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-007",
+      "category": "Logic",
+      "original_comment": "系统入场审批强制经过业务、HRBP 及 L+1 三级节点进行流转。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-008",
+      "category": "Logic",
+      "original_comment": "客户侧限制办理入职的时间必须为周一、周三或周五中的一天。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-009",
+      "category": "Logic",
+      "original_comment": "入场审批必须提前至少 3 天发起，以预留足够的行政流转周期。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-010",
+      "category": "Action",
+      "original_comment": "交付经理在内部 OA 中审核试用期、奖金及基数等合同核心信息的准确性。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-011",
+      "category": "Fact",
+      "original_comment": "候选人上一份工作的薪资流水是决定薪资谈判能否成功的根本因素。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-012",
+      "category": "Logic",
+      "original_comment": "针对批量招聘需求，采用项目毛利池策略来平衡单体低利润的 Offer。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-013",
+      "category": "Logic",
+      "original_comment": "当薪资期望与定级上限差距超过 4000 元时，谈判基本宣告失败。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-014",
+      "category": "Action",
+      "original_comment": "系统通过识别报价与市场预期严重不符的需求，建议动态停止资源投入。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-015",
+      "category": "Fact",
+      "original_comment": "候选人在入职前必须完成保密协议签署、外包入职测试及体检流程。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ]
+}

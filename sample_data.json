@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "source_file": "原子意图-流程访谈-融合-人工检查.json",
+    "created_at": "2024-12-23",
+    "total_items": 60,
+    "judgement_options": ["通过", "需修改", "删除", "待定"]
+  },
+  "Stage_1_Requirement_Insight": [
+    {
+      "id": "INT-S1-001",
+      "category": "Fact",
+      "original_comment": "招聘需求主要来源于客户的 RMS 系统或飞书在线表格。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-002",
+      "category": "Fact",
+      "original_comment": "每个招聘需求都具备唯一的系统编号和对应的职级属性。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-003",
+      "category": "Fact",
+      "original_comment": "需求文档包含岗位职责、任职资格、薪资范围等关键信息。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-004",
+      "category": "Action",
+      "original_comment": "招聘专员接收到需求后首先核对岗位信息的完整性。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S1-005",
+      "category": "Logic",
+      "original_comment": "若需求信息不完整，招聘专员需与客户沟通补充。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_2_Sourcing_Screening": [
+    {
+      "id": "INT-S2-001",
+      "category": "Action",
+      "original_comment": "招聘专员发布简化版 JD 以降低投递门槛并提升简历流量基数。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-002",
+      "category": "Action",
+      "original_comment": "招聘专员收集候选人身份证号、手机和邮箱以建立系统档案。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-003",
+      "category": "Action",
+      "original_comment": "使用多渠道搜索简历，包括智联、猎聘、BOSS直聘等平台。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-004",
+      "category": "Fact",
+      "original_comment": "简历筛选主要考虑学历、工作经验、技能匹配度。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-005",
+      "category": "Logic",
+      "original_comment": "简历匹配度达到80%以上的候选人进入初筛名单。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-006",
+      "category": "Action",
+      "original_comment": "电话初筛时核实候选人基本信息和求职意向。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S2-007",
+      "category": "Action",
+      "original_comment": "筛选合格的候选人信息录入ATS系统。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_3_Evaluation_Selection": [
+    {
+      "id": "INT-S3-001",
+      "category": "Action",
+      "original_comment": "招聘专员为了竞速占坑，优先上传原始简历以锁定系统归属权。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-002",
+      "category": "Action",
+      "original_comment": "针对特定面试官喜好，在飞书在线表格同步更新详细的推荐评价。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-003",
+      "category": "Action",
+      "original_comment": "交付经理每日定时刷新系统看板，主动识别已通过初筛待约面试的人选。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-004",
+      "category": "Fact",
+      "original_comment": "面试安排需要协调候选人、面试官、会议室三方时间。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-005",
+      "category": "Action",
+      "original_comment": "面试前向候选人发送面试通知，包含时间、地点、注意事项。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-006",
+      "category": "Action",
+      "original_comment": "面试结束后24小时内收集面试官反馈。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-007",
+      "category": "Logic",
+      "original_comment": "面试评分低于3分的候选人直接淘汰。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S3-008",
+      "category": "Action",
+      "original_comment": "将面试通过的候选人推进至下一面试轮次。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ],
+  "Stage_4_Negotiation_Onboarding": [
+    {
+      "id": "INT-S4-001",
+      "category": "Action",
+      "original_comment": "客户在候选人通过面试后的一天内给出能力定级和定级评价。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-002",
+      "category": "Logic",
+      "original_comment": "若期望薪资超限，交付经理利用能力与流水作为筹码申请调级特批。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-003",
+      "category": "Action",
+      "original_comment": "发送正式Offer邮件，包含职位、薪资、入职日期等信息。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-004",
+      "category": "Action",
+      "original_comment": "候选人接受Offer后启动背景调查流程。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-005",
+      "category": "Fact",
+      "original_comment": "入职前需完成体检、背调、证件审核等准备工作。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-006",
+      "category": "Action",
+      "original_comment": "入职当天HR协助新员工完成入职手续办理。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    },
+    {
+      "id": "INT-S4-007",
+      "category": "Logic",
+      "original_comment": "背调发现问题的候选人需重新评估是否录用。",
+      "judgement": "",
+      "judged_by": "",
+      "modified_content": "",
+      "judge_date": ""
+    }
+  ]
+}
+
