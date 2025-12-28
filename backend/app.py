@@ -6,7 +6,7 @@ import io
 from datetime import datetime
 from flask import Flask, request, jsonify, send_from_directory, Response
 from flask_cors import CORS
-from config import Config
+from config import Config, IS_VERCEL
 from models import db, UploadedFile, Intent
 from logger import logger
 
@@ -16,8 +16,19 @@ CORS(app)
 
 db.init_app(app)
 
-# 确保必要的目录存在
+# 确保必要的目录存在（仅在非Vercel环境下）
 def ensure_directories():
+    if IS_VERCEL:
+        # Vercel环境下只确保/tmp目录存在
+        tmp_dirs = ['/tmp/uploads', '/tmp/logs']
+        for d in tmp_dirs:
+            if not os.path.exists(d):
+                try:
+                    os.makedirs(d)
+                except Exception:
+                    pass
+        return
+    
     dirs = [
         Config.UPLOAD_FOLDER,
         os.path.dirname(Config.LOG_FILE),
@@ -37,9 +48,27 @@ STEP_TYPES = [
     {'value': 'triple_creation', 'label': '三元组创建'}
 ]
 
+# 初始化数据库（在应用上下文中）
+def init_db():
+    with app.app_context():
+        db.create_all()
+        logger.info("数据库表创建完成")
+
+# Vercel环境下需要在模块加载时初始化
+if IS_VERCEL:
+    ensure_directories()
+    init_db()
+
 @app.route('/')
 def serve():
-    return send_from_directory(app.static_folder, 'index.html')
+    if app.static_folder and os.path.exists(os.path.join(app.static_folder, 'index.html')):
+        return send_from_directory(app.static_folder, 'index.html')
+    return jsonify({'message': 'Ontology Review API is running', 'status': 'ok'})
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """健康检查接口"""
+    return jsonify({'status': 'ok', 'is_vercel': IS_VERCEL})
 
 @app.route('/api/step-types', methods=['GET'])
 def get_step_types():
@@ -76,9 +105,12 @@ def upload_file():
         unique_filename = f"{uuid.uuid4().hex}_{file.filename}"
         file_path = os.path.join(Config.UPLOAD_FOLDER, unique_filename)
         
-        # 保存原始文件
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        # 保存原始文件（在Vercel环境下保存到/tmp）
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            logger.warning(f"无法保存文件到磁盘: {e}")
         
         # 提取metadata
         metadata = data.get('metadata', {})
@@ -167,7 +199,10 @@ def delete_file(file_id):
         # 删除物理文件
         file_path = os.path.join(Config.UPLOAD_FOLDER, file.filename)
         if os.path.exists(file_path):
-            os.remove(file_path)
+            try:
+                os.remove(file_path)
+            except Exception as e:
+                logger.warning(f"无法删除文件: {e}")
         
         db.session.delete(file)
         db.session.commit()
@@ -386,11 +421,9 @@ def export_file(file_id):
         logger.error(f"导出文件失败: {str(e)}")
         return jsonify({'success': False, 'message': str(e)}), 500
 
+# 本地开发时运行
 if __name__ == '__main__':
     ensure_directories()
-    with app.app_context():
-        db.create_all()
-        logger.info("数据库表创建完成")
+    init_db()
     logger.info("启动服务器...")
     app.run(debug=True, host='0.0.0.0', port=5001)
-
