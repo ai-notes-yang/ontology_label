@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// API地址：优先使用环境变量，否则使用本地开发地址
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+// API地址：优先使用环境变量，否则使用生产环境地址
+const API_BASE = process.env.REACT_APP_API_URL || 'https://ontology-label-rawu7rpj9-yangs-projects-51d59773.vercel.app/api';
 
 // Toast通知组件
 function Toast({ toasts, removeToast }) {
