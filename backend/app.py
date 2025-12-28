@@ -10,7 +10,16 @@ from config import Config, IS_VERCEL
 from models import db, UploadedFile, Intent
 from logger import logger
 
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
+# 获取backend目录的绝对路径
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_FOLDER = os.path.join(BACKEND_DIR, '..', 'frontend', 'build')
+
+# 创建Flask应用
+if os.path.exists(STATIC_FOLDER):
+    app = Flask(__name__, static_folder=STATIC_FOLDER, static_url_path='')
+else:
+    app = Flask(__name__)
+
 app.config.from_object(Config)
 CORS(app)
 
@@ -61,9 +70,17 @@ if IS_VERCEL:
 
 @app.route('/')
 def serve():
-    if app.static_folder and os.path.exists(os.path.join(app.static_folder, 'index.html')):
-        return send_from_directory(app.static_folder, 'index.html')
-    return jsonify({'message': 'Ontology Review API is running', 'status': 'ok'})
+    """根路由 - 返回API状态或静态页面"""
+    if app.static_folder:
+        index_path = os.path.join(app.static_folder, 'index.html')
+        if os.path.exists(index_path):
+            return send_from_directory(app.static_folder, 'index.html')
+    return jsonify({
+        'message': 'Ontology Review API is running',
+        'status': 'ok',
+        'version': '1.0.0',
+        'endpoints': ['/api/health', '/api/step-types', '/api/files', '/api/intents']
+    })
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
