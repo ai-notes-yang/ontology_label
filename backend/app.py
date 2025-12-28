@@ -438,9 +438,12 @@ def export_file(file_id):
         logger.error(f"导出文件失败: {str(e)}")
         return jsonify({'success': False, 'message': str(e)}), 500
 
-# 本地开发时运行
+# 本地开发或Railway部署时运行
 if __name__ == '__main__':
     ensure_directories()
     init_db()
-    logger.info("启动服务器...")
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    # 从环境变量获取端口，默认5001
+    port = int(os.environ.get('PORT', 5001))
+    debug = os.environ.get('FLASK_DEBUG', 'True').lower() == 'true'
+    logger.info(f"启动服务器... 端口: {port}")
+    app.run(debug=debug, host='0.0.0.0', port=port)
